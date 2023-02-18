@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
 
 func main() {
@@ -109,4 +110,6 @@ func quickSort(arr []int) {
 
 	quickSort(arr[0:pivotIndex])
 	quickSort(arr[pivotIndex+1:])
+
+	sync.RWMutex{}
 }

@@ -10,12 +10,13 @@ func main() {
 	fmt.Println(f().name)
 }
 
-func f() (p person) {
-	p = person{name: "11"}
+func f() *person {
+	p := person{name: "11"}
 
 	defer func() {
+		fmt.Println(p)
 		p.name = "22"
 	}()
 
-	return p
+	return &p
 }
